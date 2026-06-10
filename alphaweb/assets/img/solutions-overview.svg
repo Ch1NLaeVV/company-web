@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" role="img" aria-label="Complete IT and Security Solutions visual">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07182e"/>
+      <stop offset=".55" stop-color="#020813"/>
+      <stop offset="1" stop-color="#09284b"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="260" fill="url(#bg)"/>
+  <g opacity=".24" stroke="#39dcff">
+    <path d="M0 228c180-80 310-84 520-8s365 64 680-36" fill="none"/>
+    <path d="M110 22 20 218M312 0 220 260M514 0 420 260M716 0 620 260M918 0 820 260M1120 0 1016 260"/>
+    <path d="M0 64h1200M0 130h1200M0 196h1200"/>
+  </g>
+  <g transform="translate(50 38)" filter="url(#glow)">
+    <g fill="#061427" stroke="#35d7ff" stroke-width="2">
+      <rect x="0" y="0" width="160" height="184" rx="8"/>
+      <rect x="188" y="0" width="160" height="184" rx="8"/>
+      <rect x="376" y="0" width="160" height="184" rx="8"/>
+      <rect x="564" y="0" width="160" height="184" rx="8"/>
+      <rect x="752" y="0" width="160" height="184" rx="8"/>
+      <rect x="940" y="0" width="160" height="184" rx="8"/>
+    </g>
+    <g fill="none" stroke="#39dcff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="80" cy="58" r="24"/><path d="M56 58h48M80 34c12 15 12 28 0 48M80 34c-12 15-12 28 0 48"/><circle cx="52" cy="104" r="10"/><circle cx="108" cy="104" r="10"/><path d="M66 82 56 94M94 82l10 12"/>
+      <path d="M268 28 306 44v30c0 25-16 40-38 50-22-10-38-25-38-50V44z"/><rect x="253" y="72" width="30" height="28" rx="4"/>
+      <path d="M426 94h70c12 0 20-8 20-18s-8-18-18-18c-5-16-20-25-37-22-15 3-25 14-28 28-13 2-22 12-22 24"/>
+      <rect x="610" y="46" width="42" height="34" rx="4"/><rect x="662" y="38" width="42" height="42" rx="4"/><rect x="633" y="94" width="48" height="28" rx="4"/><path d="M658 18 688 30v24c0 20-12 33-30 41-18-8-30-21-30-41V30z"/>
+      <path d="M792 42h54l22 22v62h-76z"/><path d="M846 42v22h22M810 74h38"/><rect x="820" y="92" width="38" height="28" rx="4"/>
+      <rect x="982" y="38" width="64" height="74" rx="5"/><path d="M999 60h30M999 78h22"/><path d="m1037 98 34-34 14 14-34 34-18 4z"/>
+    </g>
+    <g fill="#eaf8ff" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="800">
+      <text x="49" y="152">NETWORK</text>
+      <text x="215" y="152">CYBER SECURITY</text>
+      <text x="431" y="152">CLOUD</text>
+      <text x="599" y="152">ENDPOINT</text>
+      <text x="773" y="152">DATA SECURITY</text>
+      <text x="946" y="152">DESIGN &amp; SOLUTION</text>
+    </g>
+  </g>
+</svg>
