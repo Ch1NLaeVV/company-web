@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Cyber security icon">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <circle cx="80" cy="80" r="68" fill="#07182e" stroke="#35d7ff" stroke-width="2" opacity=".9"/>
+  <g fill="none" stroke="#39dcff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <path d="M80 28 121 44v34c0 28-17 45-41 56-24-11-41-28-41-56V44z"/>
+    <rect x="61" y="73" width="38" height="34" rx="5"/>
+    <path d="M69 73V61c0-8 5-14 11-14s11 6 11 14v12"/>
+    <path d="M80 86v10"/>
+  </g>
+</svg>

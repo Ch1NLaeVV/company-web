@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Endpoint icon">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="62%">
+      <stop offset="0" stop-color="#103a63"/>
+      <stop offset=".56" stop-color="#07182e"/>
+      <stop offset="1" stop-color="#030a18"/>
+    </radialGradient>
+    <filter id="glow" x="-55%" y="-55%" width="210%" height="210%">
+      <feGaussianBlur stdDeviation="4.2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <circle cx="80" cy="80" r="68" fill="url(#bg)" stroke="#35d7ff" stroke-width="2" opacity=".96"/>
+  <g fill="none" stroke="#39dcff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <rect x="29" y="70" width="36" height="29" rx="4"/>
+    <rect x="95" y="70" width="36" height="29" rx="4"/>
+    <rect x="59" y="90" width="42" height="32" rx="4"/>
+    <path d="M47 99v12h21M113 99v12H92M80 82v8M80 122v10M66 132h28"/>
+    <path d="M80 29 105 43v28L80 85 55 71V43z"/>
+    <path d="M55 43 80 57l25-14M80 57v28"/>
+  </g>
+</svg>
