@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="ATS favicon">
+  <defs>
+    <linearGradient id="gold" x1="18" y1="18" x2="110" y2="110">
+      <stop offset="0" stop-color="#fff6ad"/>
+      <stop offset=".45" stop-color="#e6bc55"/>
+      <stop offset="1" stop-color="#9b6d1c"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="128" height="128" rx="26" fill="#020813"/>
+  <path d="M18 54c15-24 43-35 82-31-31 2-55 12-71 31-7 9-9 18-4 28" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round"/>
+  <g fill="url(#gold)" filter="url(#glow)">
+    <path d="M24 96 48 34h18l24 62H72l-5-14H46l-5 14zm27-29h11l-5-16z"/>
+    <path d="M70 34h48v16h-15v46H85V50H70z"/>
+    <path d="M108 56h-16l-10 12 10 12h14l-8-12z"/>
+    <circle cx="110" cy="56" r="7"/>
+    <circle cx="96" cy="80" r="7"/>
+  </g>
+</svg>
