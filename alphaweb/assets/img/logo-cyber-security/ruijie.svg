@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" role="img" aria-labelledby="title">
+  <title id="title">Ruijie</title>
+  <rect width="240" height="120" fill="#fff"/>
+  <text x="120" y="75" text-anchor="middle" fill="#f11d23" font-family="Arial, Helvetica, sans-serif" font-size="45" font-weight="900" font-style="italic">Ruijie</text>
+  <path d="M60 43c45-12 86-13 128-2" fill="none" stroke="#f11d23" stroke-width="5" stroke-linecap="round"/>
+</svg>
