@@ -2696,9 +2696,14 @@ textarea {
 }
 
 .page-cyber .infra-products-section .infra-product-grid {
-  grid-template-columns: repeat(5, minmax(0, 238px));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   justify-content: center;
-  gap: 22px 24px;
+  gap: 24px 28px;
+}
+
+.page-cyber .infra-product-card img {
+  max-width: 190px;
+  max-height: 80px;
 }
 
 .infra-product-card {
