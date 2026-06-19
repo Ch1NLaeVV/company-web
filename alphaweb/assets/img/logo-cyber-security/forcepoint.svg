@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" role="img" aria-labelledby="title">
-  <title id="title">Forcepoint</title>
-  <rect width="240" height="120" fill="#fff"/>
-  <text x="120" y="72" text-anchor="middle" fill="#263843" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="800">Forcepoint</text>
-  <rect x="46" y="49" width="10" height="5" fill="#23b6c7"/>
-  <rect x="46" y="61" width="10" height="5" fill="#23b6c7"/>
-</svg>
