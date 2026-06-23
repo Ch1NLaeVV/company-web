@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /assets/img/
+Allow: /favicon.png
+
+Sitemap: https://www.alphatechnosoft.co.th/sitemap.xml
