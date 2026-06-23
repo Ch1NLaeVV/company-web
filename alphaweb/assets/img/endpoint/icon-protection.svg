@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Endpoint protection icon">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <circle cx="80" cy="80" r="68" fill="#07182e" stroke="#35d7ff" stroke-width="2" opacity=".9"/>
+  <g fill="none" stroke="#39dcff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <rect x="42" y="48" width="76" height="52" rx="8"/>
+    <path d="M56 100v10h48v-10"/>
+    <path d="M80 48V36"/>
+    <path d="M80 64v20M72 74h16"/>
+    <path d="M52 62h8M100 62h8"/>
+  </g>
+</svg>
