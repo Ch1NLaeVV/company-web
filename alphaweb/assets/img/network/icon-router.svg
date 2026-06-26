@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Router and switch icon">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <circle cx="80" cy="80" r="68" fill="#07182e" stroke="#35d7ff" stroke-width="2" opacity=".9"/>
+  <g fill="none" stroke="#39dcff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <rect x="34" y="58" width="92" height="44" rx="8"/>
+    <path d="M48 78h12M48 88h12M72 78h12M72 88h12M96 78h12M96 88h12"/>
+    <path d="M56 58V44M80 58V44M104 58V44"/>
+    <circle cx="56" cy="38" r="6"/><circle cx="80" cy="38" r="6"/><circle cx="104" cy="38" r="6"/>
+  </g>
+</svg>

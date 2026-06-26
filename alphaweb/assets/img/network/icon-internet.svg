@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Internet link icon">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <circle cx="80" cy="80" r="68" fill="#07182e" stroke="#35d7ff" stroke-width="2" opacity=".9"/>
+  <g fill="none" stroke="#39dcff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)">
+    <circle cx="80" cy="80" r="28"/>
+    <ellipse cx="80" cy="80" rx="28" ry="12"/>
+    <path d="M52 80h56M80 52v56"/>
+    <path d="M38 108c10-8 26-12 42-12s32 4 42 12" stroke="#f4d675"/>
+    <path d="M38 52c10 8 26 12 42 12s32-4 42-12" stroke="#f4d675"/>
+  </g>
+</svg>
