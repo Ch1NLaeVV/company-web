@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="th">
   <head>
     <meta charset="utf-8" />
@@ -45,7 +45,6 @@
               <a href="endpoint.html">Endpoint</a>
               <a href="data-security.html">Data Security</a>
               <a href="design-solution.html" class="nav-submenu-multiline"><span>Design &amp;</span><span>Solution</span></a>
-              <a href="marlog.html">MarLog</a>
             </div>
           </div>
           <a href="about.html">About Us</a>
@@ -54,12 +53,30 @@
         </nav>
 
         <div class="header-actions">
+          <div class="header-datetime" id="headerDateTime"></div>
           <button class="lang-toggle" id="langToggle" aria-label="Switch language">
-            <span class="lang-th">TH</span>
-            <span class="lang-divider">|</span>
-            <span class="lang-en">EN</span>
+            <span class="lang-text-row">
+              <span class="lang-th">TH</span>
+              <span class="lang-divider">|</span>
+              <span class="lang-en">EN</span>
+            </span>
+            <span class="lang-flag-row">
+              <svg class="flag-icon flag-th-icon" viewBox="0 0 900 600" width="16" height="10.7">
+                <rect width="900" height="600" fill="#f4f5f8"/>
+                <rect width="900" height="100" fill="#a51931"/>
+                <rect y="500" width="900" height="100" fill="#a51931"/>
+                <rect y="200" width="900" height="200" fill="#2d2a4a"/>
+              </svg>
+              <svg class="flag-icon flag-en-icon" viewBox="0 0 60 30" width="16" height="8">
+                <rect width="60" height="30" fill="#012169"/>
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#c8102e" stroke-width="4"/>
+                <path d="M30,0 L30,30 M0,15 L60,15" stroke="#fff" stroke-width="10"/>
+                <path d="M30,0 L30,30 M0,15 L60,15" stroke="#c8102e" stroke-width="6"/>
+              </svg>
+            </span>
           </button>
-          <a class="nav-cta" href="#" data-download-profile>📄 Company Profile</a>
+          <a class="nav-cta" href="#" data-download-profile><span class="nav-cta-icon">📄</span><span class="nav-cta-text">Company Profile</span></a>
         </div>
       </div>
     </header>
@@ -208,7 +225,85 @@
         </div>
       </section>
 
-      <section class="section infra-benefits-section">
+      <section class="section infra-services-section reveal" style="padding-top: 0;">
+        <div class="container section-heading">
+          <p class="eyebrow" data-th="ระบบจัดการ Log รวมศูนย์" data-en="Centralized Log Management">ระบบจัดการ Log รวมศูนย์</p>
+          <h2 data-th="MarLog (Centralized Log Management)" data-en="MarLog (Centralized Log Management)">MarLog (Centralized Log Management)</h2>
+          <p data-th="MarLog เป็นระบบรวบรวมข้อมูล Log จากทุกอุปกรณ์และระบบเครือข่ายภายในองค์กร มารวมไว้ในที่เดียวกันเพื่อความสะดวกในการวิเคราะห์และตรวจสอบภัยคุกคามไซเบอร์" data-en="MarLog gathers and analyzes logs from all network devices and applications in a centralized repository to secure operations and streamline cyber threat investigation.">
+            MarLog เป็นระบบรวบรวมข้อมูล Log จากทุกอุปกรณ์และระบบเครือข่ายภายในองค์กร มารวมไว้ในที่เดียวกันเพื่อความสะดวกในการวิเคราะห์และตรวจสอบภัยคุกคามไซเบอร์
+          </p>
+        </div>
+
+        <div class="container infra-service-grid marlog-service-grid">
+          <article class="infra-service-card">
+            <div class="infra-service-media">
+              <img src="assets/img/marlog/vagashield-siem-dashboard.jpg" alt="SIEM and SOC" loading="lazy" />
+              <div class="infra-service-media-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="infra-service-body">
+              <h3 data-th="SIEM & Security Operations (SOC)" data-en="SIEM & Security Operations (SOC)">SIEM & Security Operations (SOC)</h3>
+              <p data-th="วิเคราะห์ภัยคุกคามแบบเรียลไทม์ และระบบตรวจจับพฤติกรรมผิดปกติของอุปกรณ์ (UEBA) ได้อย่างแม่นยำ" data-en="Real-time threat intelligence analytics and User & Entity Behavior Analytics (UEBA) to identify anomalies.">วิเคราะห์ภัยคุกคามแบบเรียลไทม์ และระบบตรวจจับพฤติกรรมผิดปกติของอุปกรณ์ (UEBA) ได้อย่างแม่นยำ</p>
+            </div>
+          </article>
+
+          <article class="infra-service-card">
+            <div class="infra-service-media">
+              <img src="assets/img/marlog/vagashield-asset-discovery.jpg" alt="Asset Intelligence & Discovery" loading="lazy" />
+              <div class="infra-service-media-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="infra-service-body">
+              <h3 data-th="Asset Intelligence & Discovery" data-en="Asset Intelligence & Discovery">Asset Intelligence & Discovery</h3>
+              <p data-th="ค้นหาและระบุตัวตนของอุปกรณ์ในระบบเครือข่ายอัตโนมัติ พร้อมจัดทำฐานข้อมูลรายละเอียดอุปกรณ์และประวัติความเสี่ยง" data-en="Automatically discover and identify network assets (IT/OT/IoT) and establish risk profiles.">ค้นหาและระบุตัวตนของอุปกรณ์ในระบบเครือข่ายอัตโนมัติ พร้อมจัดทำฐานข้อมูลรายละเอียดอุปกรณ์และประวัติความเสี่ยง</p>
+            </div>
+          </article>
+
+          <article class="infra-service-card">
+            <div class="infra-service-media">
+              <img src="assets/img/marlog/vagashield-network-topology.jpg" alt="Network Visibility & Topology" loading="lazy" />
+              <div class="infra-service-media-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="infra-service-body">
+              <h3 data-th="Network Visibility & Topology" data-en="Network Visibility & Topology">Network Visibility & Topology</h3>
+              <p data-th="สร้างแผนผังโครงสร้างเครือข่าย Layer 2 / Layer 3 อัตโนมัติ เพื่อตรวจสอบสถานะและปริมาณแบนด์วิดท์แบบเรียลไทม์" data-en="Automatically generate Layer 2 / Layer 3 network topology maps to monitor connections and bandwidth.">สร้างแผนผังโครงสร้างเครือข่าย Layer 2 / Layer 3 อัตโนมัติ เพื่อตรวจสอบสถานะและปริมาณแบนด์วิดท์แบบเรียลไทม์</p>
+            </div>
+          </article>
+
+          <article class="infra-service-card">
+            <div class="infra-service-media">
+              <img src="assets/img/marlog/vagashield-security-management.png" alt="Security & Vulnerability Management" loading="lazy" />
+              <div class="infra-service-media-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="infra-service-body">
+              <h3 data-th="Security & Vulnerability Management" data-en="Security & Vulnerability Management">Security & Vulnerability Management</h3>
+              <p data-th="วิเคราะห์ช่องโหว่ของอุปกรณ์โดยเทียบกับฐานข้อมูล CVE สากล พร้อมแจ้งเตือนเมื่อพบอุปกรณ์แปลกปลอมในเครือข่าย" data-en="Compare network devices against global CVE vulnerability databases and alert on rogue hardware.">วิเคราะห์ช่องโหว่ของอุปกรณ์โดยเทียบกับฐานข้อมูล CVE สากล พร้อมแจ้งเตือนเมื่อพบอุปกรณ์แปลกปลอมในเครือข่าย</p>
+            </div>
+          </article>
+
+          <article class="infra-service-card">
+            <div class="infra-service-media">
+              <img src="assets/img/marlog/vagashield-reporting-compliance.png" alt="Reporting & Compliance Analytics" loading="lazy" />
+              <div class="infra-service-media-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="infra-service-body">
+              <h3 data-th="Reporting & Compliance Analytics" data-en="Reporting & Compliance Analytics">Reporting & Compliance Analytics</h3>
+              <p data-th="สร้างรายงานอัตโนมัติรองรับความสอดคล้องมาตรฐานความปลอดภัย PDPA, ISO 27001, NIST CSF และ พ.ร.บ. คอมพิวเตอร์ฯ" data-en="Automated customized compliance reports for PDPA, ISO 27001, NIST CSF, and Computer Crimes Act.">สร้างรายงานอัตโนมัติรองรับความสอดคล้องมาตรฐานความปลอดภัย PDPA, ISO 27001, NIST CSF และ พ.ร.บ. คอมพิวเตอร์ฯ</p>
+            </div>
+          </article>
+
+          <article class="infra-service-card">
+            <div class="infra-service-media">
+              <img src="assets/img/marlog/vagashield-log-platforms.png" alt="Automation & SOAR Orchestration" loading="lazy" />
+              <div class="infra-service-media-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="infra-service-body">
+              <h3 data-th="Automation & SOAR Orchestration" data-en="Automation & SOAR Orchestration">Automation & SOAR Orchestration</h3>
+              <p data-th="สั่งการตอบสนองภัยคุกคามอัตโนมัติด้วย Playbook Builder ช่วยบล็อกไอพีหรือกักกันเครื่องติดมัลแวร์ได้ทันทีผ่าน API" data-en="Automated cyber response workflows (SOAR) using API integrations to isolate threats or block IPs.">สั่งการตอบสนองภัยคุกคามอัตโนมัติด้วย Playbook Builder ช่วยบล็อกไอพีหรือกักกันเครื่องติดมัลแวร์ได้ทันทีผ่าน API</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section infra-benefits-section benefits-data">
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">Customer Benefits</p>
@@ -257,7 +352,6 @@
           <a href="endpoint.html">Endpoint</a>
           <a href="data-security.html">Data Security</a>
           <a href="design-solution.html">Design &amp; Solution</a>
-          <a href="marlog.html">MarLog</a>
         </div>
         <div>
           <h2 data-th="ข้อมูลบริษัท" data-en="Company">Company</h2>
@@ -301,7 +395,7 @@
         </div></div>
       <div class="container footer-bottom">
         <span>© 2026 ALPHA TECHNO SOFT CO., LTD. All Rights Reserved.</span>
-        <div class="footer-bottom-links">
+                        <div class="footer-bottom-links">
           <a href="privacy-policy.html" data-th="Privacy Policy" data-en="Privacy Policy">Privacy Policy</a>
           <span class="pdpa-badge">PDPA Compliant</span>
         </div>

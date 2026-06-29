@@ -248,6 +248,7 @@ textarea {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.035em;
+  white-space: nowrap;
   transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -393,9 +394,19 @@ textarea {
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  white-space: nowrap;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 0 32px rgba(0, 245, 255, 0.55), 0 0 64px rgba(0, 212, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.22);
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.nav-cta-icon {
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.05rem;
+  line-height: 1;
+  transform: translateY(-1.5px);
 }
 
 .nav-cta:hover {
@@ -2280,6 +2291,13 @@ textarea {
   min-width: 0;
 }
 
+.content-layout.content-layout-full {
+  grid-template-columns: 1fr;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .about-mission-layout {
   margin-top: 74px;
   padding-top: 58px;
@@ -2734,19 +2752,78 @@ textarea {
   font-size: 0.94rem;
 }
 
-.page-marlog .infra-service-body {
+.page-marlog .infra-service-body,
+.marlog-service-grid .infra-service-body {
   grid-template-columns: minmax(0, 1fr);
   padding: 24px 26px 28px;
 }
 
-.page-marlog .infra-service-body p {
+.page-marlog .infra-service-body p,
+.marlog-service-grid .infra-service-body p {
   grid-column: 1;
 }
 
+
 .infra-benefits-section {
+  position: relative;
   background:
-    linear-gradient(180deg, rgba(2, 8, 19, 0.72), rgba(3, 10, 24, 0.96)),
-    radial-gradient(circle at 78% 22%, rgba(244, 214, 117, 0.1), transparent 18rem);
+    linear-gradient(180deg, rgba(2, 8, 19, 0.95) 0%, rgba(2, 8, 19, 0.8) 50%, rgba(3, 10, 24, 0.96) 100%),
+    url('../img/benefits-bg.png') no-repeat center center / cover;
+  overflow: hidden;
+}
+
+.infra-benefits-section.benefits-cloud {
+  background-image:
+    linear-gradient(180deg, rgba(2, 8, 19, 0.95) 0%, rgba(2, 8, 19, 0.8) 50%, rgba(3, 10, 24, 0.96) 100%),
+    url('../img/benefits-cloud-bg.png');
+}
+
+.infra-benefits-section.benefits-cyber {
+  background-image:
+    linear-gradient(180deg, rgba(2, 8, 19, 0.95) 0%, rgba(2, 8, 19, 0.8) 50%, rgba(3, 10, 24, 0.96) 100%),
+    url('../img/benefits-cyber-bg.png');
+}
+
+.infra-benefits-section.benefits-data {
+  background-image:
+    linear-gradient(180deg, rgba(2, 8, 19, 0.95) 0%, rgba(2, 8, 19, 0.8) 50%, rgba(3, 10, 24, 0.96) 100%),
+    url('../img/benefits-data-bg.png');
+}
+
+.infra-benefits-section.benefits-design {
+  background-image:
+    linear-gradient(180deg, rgba(2, 8, 19, 0.95) 0%, rgba(2, 8, 19, 0.8) 50%, rgba(3, 10, 24, 0.96) 100%),
+    url('../img/benefits-design-bg.png');
+}
+
+.infra-benefits-section.benefits-endpoint {
+  background-image:
+    linear-gradient(180deg, rgba(2, 8, 19, 0.95) 0%, rgba(2, 8, 19, 0.8) 50%, rgba(3, 10, 24, 0.96) 100%),
+    url('../img/benefits-endpoint-bg.png');
+}
+
+.infra-benefits-section.benefits-network {
+  background-image:
+    linear-gradient(180deg, rgba(2, 8, 19, 0.95) 0%, rgba(2, 8, 19, 0.8) 50%, rgba(3, 10, 24, 0.96) 100%),
+    url('../img/benefits-network-bg.png');
+}
+
+
+.infra-benefits-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 78% 22%, rgba(55, 216, 255, 0.08), transparent 30rem);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.infra-benefits-section .container {
+  position: relative;
+  z-index: 2;
 }
 
 .infra-benefits-list {
@@ -2944,9 +3021,40 @@ textarea {
     radial-gradient(ellipse at 92% 12%, rgba(25, 141, 255, 0.18), transparent 20rem);
 }
 
+@media (max-width: 1280px) {
+  .nav-shell {
+    grid-template-columns: 200px 1fr auto;
+    gap: 16px;
+    min-height: 100px;
+  }
+  .brand img {
+    width: 180px;
+  }
+  .site-nav {
+    gap: 4px;
+    padding: 4px;
+  }
+  .site-nav a {
+    padding: 8px 12px;
+    font-size: 0.72rem;
+  }
+}
+
 @media (max-width: 1160px) {
   .nav-shell {
-    grid-template-columns: 230px 1fr auto;
+    grid-template-columns: 180px 1fr auto;
+    gap: 12px;
+  }
+  .brand img {
+    width: 160px;
+  }
+  .site-nav {
+    gap: 2px;
+    padding: 3px;
+  }
+  .site-nav a {
+    padding: 8px 10px;
+    font-size: 0.70rem;
   }
 
   .infra-service-grid {
@@ -5142,8 +5250,9 @@ body.page-projects::before {
   padding: 0;
   margin: 0;
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 3px;
   font-family: inherit;
   font-size: 0.82rem;
   color: var(--soft);
@@ -5151,22 +5260,52 @@ body.page-projects::before {
   outline: none;
 }
 
+.lang-text-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  line-height: 1;
+}
+
+.lang-flag-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+}
+
 .lang-toggle .lang-th,
-.lang-toggle .lang-en {
-  opacity: 0.4;
+.lang-toggle .lang-en,
+.lang-toggle .flag-th-icon,
+.lang-toggle .flag-en-icon {
+  opacity: 0.45;
   color: #fff;
-  transition: opacity 0.2s ease, text-shadow 0.2s ease;
+  transition: opacity 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.lang-toggle .flag-th-icon,
+.lang-toggle .flag-en-icon {
+  border-radius: 1px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.lang-toggle .lang-th.active,
+.lang-toggle .lang-en.active,
+.lang-toggle .flag-th-icon.active,
+.lang-toggle .flag-en-icon.active {
+  opacity: 1;
+  text-shadow: 0 0 8px rgba(55, 216, 255, 0.5);
 }
 
 .lang-toggle .lang-th.active,
 .lang-toggle .lang-en.active {
-  opacity: 1;
   font-weight: 700;
-  text-shadow: 0 0 8px rgba(55, 216, 255, 0.5);
 }
 
 .lang-toggle:hover .lang-th:not(.active),
-.lang-toggle:hover .lang-en:not(.active) {
+.lang-toggle:hover .lang-en:not(.active),
+.lang-toggle:hover .flag-th-icon:not(.active),
+.lang-toggle:hover .flag-en-icon:not(.active) {
   opacity: 0.75;
 }
 
@@ -5200,5 +5339,151 @@ body.page-projects::before {
   pointer-events: none;
 }
 
+/* ==========================================================================
+   About Page - Premium Intro Panel
+   ========================================================================== */
+
+.about-intro-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 3px solid var(--cyan);
+  border-radius: 24px;
+  padding: 60px 80px;
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  max-width: 100% !important;
+}
+
+.about-intro-panel h2 {
+  font-size: 2.3rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 28px !important;
+}
+
+.about-intro-panel .lead-thai {
+  font-size: 1.25rem !important;
+  line-height: 1.85 !important;
+  margin-bottom: 24px !important;
+}
+
+.about-intro-panel p:not(.eyebrow):not(.lead-thai) {
+  font-size: 1.12rem !important;
+  line-height: 1.85 !important;
+}
+
+.about-intro-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 40px 80px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(55, 216, 255, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  border-color: rgba(55, 216, 255, 0.2);
+}
+
+.about-intro-panel::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(55, 216, 255, 0.12), transparent 70%);
+  pointer-events: none;
+  filter: blur(30px);
+}
+
+@media (max-width: 768px) {
+  .about-intro-panel {
+    padding: 40px 24px;
+    border-radius: 16px;
+  }
+  .about-intro-panel h2 {
+    font-size: 1.8rem !important;
+  }
+  .about-intro-panel .lead-thai {
+    font-size: 1.15rem !important;
+  }
+}
+
+/* ==========================================================================
+   About Page - Mission Section Background
+   ========================================================================== */
+
+.mission-section {
+  position: relative;
+  background: 
+    linear-gradient(90deg, rgba(2, 8, 19, 0.97) 35%, rgba(2, 8, 19, 0.8) 70%, rgba(2, 8, 19, 0.5) 100%),
+    url('../img/tech-mission-bg.png') no-repeat center center / cover;
+  overflow: hidden;
+}
+
+.mission-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 80% 50%, rgba(55, 216, 255, 0.08), transparent 50%);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Header Live Clock / DateTime Display
+   ========================================================================== */
+
+.header-datetime {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  white-space: nowrap;
+  width: 170px; /* locked fixed width to prevent layout shifts */
+  padding-right: 14px;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  margin-right: -10px; /* centers the border within the flex gap */
+  opacity: 0.85;
+}
+
+.header-datetime .header-date {
+  font-size: 0.70rem;
+  color: var(--soft);
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+}
+
+.header-datetime .header-time {
+  font-size: 0.80rem;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 1280px) {
+  .header-actions {
+    gap: 14px;
+  }
+  .header-datetime {
+    width: 140px; /* adjusted fixed width for smaller viewports */
+    padding-right: 10px;
+    margin-right: -8px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .header-datetime {
+    display: none;
+  }
+}
 
 
