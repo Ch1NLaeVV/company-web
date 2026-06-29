@@ -978,36 +978,136 @@ function applyLang(lang) {
     }
   });
 
-  // Update button active state
+  // Update header button active state
   const langToggleBtn = document.getElementById("langToggle");
   if (langToggleBtn) {
     const thText = langToggleBtn.querySelector(".lang-th");
     const enText = langToggleBtn.querySelector(".lang-en");
+    const thFlag = langToggleBtn.querySelector(".flag-th-icon");
+    const enFlag = langToggleBtn.querySelector(".flag-en-icon");
     if (thText && enText) {
       if (lang === "en") {
         thText.classList.remove("active");
         enText.classList.add("active");
+        if (thFlag) thFlag.classList.remove("active");
+        if (enFlag) enFlag.classList.add("active");
       } else {
         enText.classList.remove("active");
         thText.classList.add("active");
+        if (enFlag) enFlag.classList.remove("active");
+        if (thFlag) thFlag.classList.add("active");
       }
+    }
+  }
+
+  updateHeaderClock();
+}
+
+function updateHeaderClock() {
+  const clockEl = document.getElementById("headerDateTime");
+  if (!clockEl) return;
+  
+  try {
+    const now = new Date();
+    const lang = document.documentElement.getAttribute("lang") || "th";
+    
+    if (lang === "th") {
+      const dateFormatter = new Intl.DateTimeFormat('th-TH', { 
+        weekday: 'long', 
+        day: 'numeric', 
+        month: 'short', 
+        year: 'numeric' 
+      });
+      const timeFormatter = new Intl.DateTimeFormat('th-TH', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      });
+      
+      // Remove 'วัน' prefix and 'ที่' preposition from the Thai date
+      let dateStr = dateFormatter.format(now);
+      dateStr = dateStr.replace(/^วัน/, '').replace(/ที่\s*/, ' ');
+      
+      clockEl.innerHTML = `<span class="header-date">${dateStr}</span><span class="header-time">${timeFormatter.format(now)} น.</span>`;
+    } else {
+      const dateFormatter = new Intl.DateTimeFormat('en-US', { 
+        weekday: 'long', 
+        month: 'short', 
+        day: 'numeric', 
+        year: 'numeric' 
+      });
+      const timeFormatter = new Intl.DateTimeFormat('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      });
+      
+      clockEl.innerHTML = `<span class="header-date">${dateFormatter.format(now)}</span><span class="header-time">${timeFormatter.format(now)}</span>`;
+    }
+  } catch (err) {
+    console.error("Error updating header clock:", err);
+    // Bulletproof fallback in case Intl.DateTimeFormat is unsupported or fails
+    try {
+      const now = new Date();
+      const lang = document.documentElement.getAttribute("lang") || "th";
+      const hh = String(now.getHours()).padStart(2, '0');
+      const mm = String(now.getMinutes()).padStart(2, '0');
+      const ss = String(now.getSeconds()).padStart(2, '0');
+      if (lang === "th") {
+        const yearBE = now.getFullYear() + 543;
+        const daysTH = ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'];
+        const monthsTH = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+        const dayName = daysTH[now.getDay()];
+        const monthName = monthsTH[now.getMonth()];
+        const dateStr = `${dayName} ${now.getDate()} ${monthName} ${yearBE}`;
+        clockEl.innerHTML = `<span class="header-date">${dateStr}</span><span class="header-time">${hh}:${mm}:${ss} น.</span>`;
+      } else {
+        const daysEN = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const monthsEN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const dayName = daysEN[now.getDay()];
+        const monthName = monthsEN[now.getMonth()];
+        const dateStr = `${dayName}, ${monthName} ${now.getDate()}, ${now.getFullYear()}`;
+        let hours = now.getHours();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        const formattedHours = String(hours).padStart(2, '0');
+        clockEl.innerHTML = `<span class="header-date">${dateStr}</span><span class="header-time">${formattedHours}:${mm}:${ss} ${ampm}</span>`;
+      }
+    } catch (fallbackErr) {
+      console.error("Clock fallback failed:", fallbackErr);
     }
   }
 }
 
 function initLangToggle() {
   const langToggleBtn = document.getElementById("langToggle");
-  let currentLang = localStorage.getItem("lang") || "th";
+  let currentLang = "th";
+  try {
+    currentLang = localStorage.getItem("lang") || "th";
+  } catch (e) {
+    console.warn("localStorage read blocked/failed:", e);
+  }
   
   applyLang(currentLang);
   
   if (langToggleBtn) {
     langToggleBtn.addEventListener("click", () => {
-      currentLang = currentLang === "th" ? "en" : "th";
-      localStorage.setItem("lang", currentLang);
-      applyLang(currentLang);
+      const currentElementLang = document.documentElement.getAttribute("lang") || "th";
+      const nextLang = currentElementLang === "th" ? "en" : "th";
+      try {
+        localStorage.setItem("lang", nextLang);
+      } catch (e) {
+        console.warn("localStorage write blocked/failed:", e);
+      }
+      applyLang(nextLang);
     });
   }
+
+  updateHeaderClock();
+  setInterval(updateHeaderClock, 1000);
 }
 
 // Start initialization logic on load
@@ -1022,6 +1122,7 @@ if (document.readyState === "loading") {
   initScrollReveal();
   initLangToggle();
 }
+
 
 
 
