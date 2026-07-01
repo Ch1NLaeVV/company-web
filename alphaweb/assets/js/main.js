@@ -266,7 +266,8 @@ if (contactForm) {
     const status = contactForm.querySelector("[data-form-status]");
     const submitButton = contactForm.querySelector('button[type="submit"]');
     if (status) {
-      status.textContent = "กำลังส่งข้อมูลไปยังอีเมลบริษัท...";
+      const isEn = document.documentElement.lang === "en";
+      status.textContent = isEn ? "Sending inquiry to company email..." : "กำลังส่งข้อมูลไปยังอีเมลบริษัท...";
     }
     if (submitButton) {
       submitButton.disabled = true;
@@ -284,12 +285,12 @@ const initCookieBanner = () => {
   banner.setAttribute("aria-label", "Cookie notice");
   banner.innerHTML = `
     <p>
-      เว็บไซต์นี้ใช้คุกกี้ที่จำเป็นเพื่อให้เว็บไซต์ทำงานได้อย่างเหมาะสม และอาจใช้ข้อมูลการใช้งานเพื่อปรับปรุงประสบการณ์ของผู้เข้าชม
-      อ่านรายละเอียดเพิ่มเติมได้ที่ <a href="privacy-policy.html">Privacy Policy</a>
+      <span data-th="เว็บไซต์นี้ใช้คุกกี้ที่จำเป็นเพื่อให้เว็บไซต์ทำงานได้อย่างเหมาะสม และอาจใช้ข้อมูลการใช้งานเพื่อปรับปรุงประสบการณ์ของผู้เข้าชม อ่านรายละเอียดเพิ่มเติมได้ที่" data-en="This website uses cookies necessary for proper functioning and may use usage data to improve user experience. Read more in our">เว็บไซต์นี้ใช้คุกกี้ที่จำเป็นเพื่อให้เว็บไซต์ทำงานได้อย่างเหมาะสม และอาจใช้ข้อมูลการใช้งานเพื่อปรับปรุงประสบการณ์ของผู้เข้าชม อ่านรายละเอียดเพิ่มเติมได้ที่</span>
+      <a href="privacy-policy.html" data-th="นโยบายความเป็นส่วนตัว" data-en="Privacy Policy">นโยบายความเป็นส่วนตัว</a>
     </p>
     <div class="cookie-actions">
-      <button class="button button-primary" type="button" data-accept-cookies>ยอมรับ</button>
-      <a class="button button-ghost" href="privacy-policy.html">อ่านนโยบาย</a>
+      <button class="button button-primary" type="button" data-accept-cookies data-th="ยอมรับ" data-en="Accept">ยอมรับ</button>
+      <a class="button button-ghost" href="privacy-policy.html" data-th="อ่านนโยบาย" data-en="View Policy">อ่านนโยบาย</a>
     </div>
   `;
 
